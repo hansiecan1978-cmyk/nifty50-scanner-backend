@@ -8,6 +8,12 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 10000;
 
+const express = require('express');
+const cors = require('cors'); // Install with: npm install cors
+
+const app = express();
+app.use(cors()); // Enable ALL CORS requests
+
 // Top 10 Nifty 50 symbols to avoid API rate limits
 const NIFTY_50 = [
   'RELIANCE.BSE', 'TCS.BSE', 'HDFCBANK.BSE', 'INFY.BSE', 'ICICIBANK.BSE',
@@ -162,3 +168,4 @@ function generateFallbackData(symbol) {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
